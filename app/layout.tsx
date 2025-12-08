@@ -22,7 +22,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AutoPR Engine - AI-Powered GitHub PR Automation (Alpha Preview)",
+  title: "CodeFlow - AI-Powered GitHub PR Automation (Alpha Preview)",
   description: "Transform your GitHub pull request workflows through intelligent analysis, issue creation, and multi-agent collaboration. Currently in alpha preview.",
 };
 

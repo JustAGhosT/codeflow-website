@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 /**
  * AnimatedBackground - Particle animation background using design tokens
  *
- * Configuration values are defined in design-system/tokens.css:
+ * Configuration values are defined inline (design-system is in codeflow-desktop repo):
  * - --color-particle: Base particle color
  * - --color-particle-connection: Connection line color
  *
@@ -24,7 +24,7 @@ const PARTICLE_SPEED = 0.5;
 const CONNECTION_MAX_OPACITY = 0.15;
 
 // Design token color values (RGB only for use with variable opacity)
-// These match the values in design-system/tokens.css
+// These match design token values (design-system is in codeflow-desktop repo)
 const PARTICLE_COLORS = {
   light: { r: 59, g: 130, b: 246 },  // --color-primary-500 (#3b82f6)
   dark: { r: 147, g: 197, b: 253 },  // --color-primary-300 (#93c5fd)
