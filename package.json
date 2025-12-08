@@ -1,12 +1,15 @@
 {
-  "name": "website",
+  "name": "codeflow-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "precommit": "pre-commit run volume-precommit --hook-stage manual",
+    "precommit:fast": "PRECOMMIT_DISABLE_PRETTIER=1 pre-commit run volume-precommit --hook-stage manual",
+    "precommit:repo": "pwsh -File scripts/.local/precommit.ps1"
   },
   "dependencies": {
     "next": "16.0.7",
@@ -14,6 +17,7 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@cspell/dict-en_us": "^4.4.16",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

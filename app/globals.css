@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "../../design-system/tokens.css";
+/* Design tokens - using inline values since design-system is in codeflow-desktop repo */
 
 @custom-variant dark (&:where(.dark, .dark *));
 
