@@ -47,7 +47,8 @@ The website includes a GitHub Actions workflow (`.github/workflows/ci.yml`) that
 
 **Setup:**
 
-1. Create Azure Static Web App resource:
+#### 1. Create Azure Static Web App resource
+
 ```bash
 az staticwebapp create \
   --name codeflow-website \
@@ -56,7 +57,8 @@ az staticwebapp create \
   --sku Free
 ```
 
-2. Get deployment token:
+#### 2. Get deployment toke
+
 ```bash
 az staticwebapp secrets list \
   --name codeflow-website \
@@ -64,12 +66,14 @@ az staticwebapp secrets list \
   --query properties.apiKey -o tsv
 ```
 
-3. Add to GitHub Secrets:
-   - Go to repository Settings → Secrets
-   - Add secret: `AZURE_STATIC_WEB_APPS_API_TOKEN`
-   - Paste the deployment token
+#### 3. Add to GitHub Secrets
 
-4. Push to main branch:
+- Go to repository Settings → Secrets
+- Add secret: `AZURE_STATIC_WEB_APPS_API_TOKEN`
+- Paste the deployment token
+
+#### 24. Push to main branch
+
 ```bash
 git push origin main
 ```
@@ -132,7 +136,8 @@ az staticwebapp hostname set \
 ### 2. Configure DNS
 
 Add CNAME record:
-```
+
+``` text
 Type: CNAME
 Name: www
 Value: <your-static-web-app>.azurestaticapps.net
@@ -158,7 +163,8 @@ az staticwebapp hostname show \
 
 ### Azure CDN Integration
 
-1. Create CDN profile:
+#### 1. Create CDN profile
+
 ```bash
 az cdn profile create \
   --name codeflow-cdn \
@@ -166,7 +172,8 @@ az cdn profile create \
   --sku Standard_Microsoft
 ```
 
-2. Create CDN endpoint:
+#### 2. Create CDN endpoint
+
 ```bash
 az cdn endpoint create \
   --name codeflow-website-cdn \
@@ -175,7 +182,7 @@ az cdn endpoint create \
   --origin www.codeflow.io
 ```
 
-3. Configure caching rules in Azure Portal
+#### 3. Configure caching rules in Azure Portal
 
 ---
 
@@ -188,11 +195,11 @@ The site uses static export for Azure Static Web Apps:
 ```javascript
 // next.config.js
 module.exports = {
-  output: 'export',
+  output: "export",
   images: {
-    unoptimized: true
-  }
-}
+    unoptimized: true,
+  },
+};
 ```
 
 ### Build Optimization
@@ -208,7 +215,8 @@ module.exports = {
 
 ### Application Insights
 
-1. Create Application Insights:
+#### 1. Create Application Insights
+
 ```bash
 az monitor app-insights component create \
   --app codeflow-website-insights \
@@ -216,17 +224,20 @@ az monitor app-insights component create \
   --resource-group codeflow-rg
 ```
 
-2. Add to Next.js:
+#### 2. Add to Next.js
+
 ```javascript
 // Add to _app.js or _app.tsx
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from "@vercel/analytics/react";
 ```
 
 ### Logs
 
 View logs in Azure Portal:
+
 - Navigate to Static Web App → Monitoring → Logs
 - Or use Azure CLI:
+
 ```bash
 az staticwebapp logs show \
   --name codeflow-website \
@@ -240,6 +251,7 @@ az staticwebapp logs show \
 ### Build Failures
 
 **TypeScript errors:**
+
 ```bash
 # Check TypeScript
 npm run type-check
@@ -249,6 +261,7 @@ npm run lint -- --fix
 ```
 
 **Build timeout:**
+
 - Increase build timeout in GitHub Actions
 - Optimize build process
 - Remove unused dependencies
@@ -256,11 +269,13 @@ npm run lint -- --fix
 ### Deployment Issues
 
 **404 errors:**
+
 - Check `staticwebapp.config.json` routing rules
 - Verify `output` directory in `next.config.js`
 - Check build output location
 
 **Environment variables not working:**
+
 - Verify `.env.production` is committed (if needed)
 - Check Azure Static Web Apps configuration
 - Use `NEXT_PUBLIC_` prefix for client-side variables
@@ -268,6 +283,7 @@ npm run lint -- --fix
 ### Performance Issues
 
 **Slow page loads:**
+
 - Enable CDN
 - Optimize images
 - Reduce bundle size
@@ -285,6 +301,7 @@ npm run lint -- --fix
 4. Click "Redeploy"
 
 Or use Azure CLI:
+
 ```bash
 az staticwebapp deployment show \
   --name codeflow-website \
@@ -317,6 +334,6 @@ az staticwebapp deployment show \
 ## Support
 
 For issues or questions:
+
 - GitHub Issues: [codeflow-website/issues](https://github.com/JustAGhosT/codeflow-website/issues)
 - Azure Support: [Azure Portal](https://portal.azure.com)
-
