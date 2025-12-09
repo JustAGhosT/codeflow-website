@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+﻿import Header from "../components/Header";
 
 export default function Installation() {
   return (
@@ -11,7 +11,7 @@ export default function Installation() {
             Installation Guide
           </h1>
           <p className="mb-12 text-xl text-slate-600 dark:text-slate-400">
-            Get AutoPR Engine up and running in minutes. Choose your preferred installation method.
+            Get CodeFlow Engine up and running in minutes. Choose your preferred installation method.
           </p>
 
           <div className="space-y-8">
@@ -24,7 +24,7 @@ export default function Installation() {
                 Use our automated installation script for the fastest setup:
               </p>
               <div className="rounded-lg bg-slate-800 p-4 font-mono text-sm text-slate-50 dark:bg-slate-900">
-                <code>curl -fsSL https://raw.githubusercontent.com/JustAGhosT/autopr-engine/main/install.sh | bash</code>
+                <code>curl -fsSL https://raw.githubusercontent.com/JustAGhosT/codeflow-engine/main/install.sh | bash</code>
               </div>
             </div>
 
@@ -34,20 +34,20 @@ export default function Installation() {
                 Docker Installation
               </h2>
               <p className="mb-4 text-slate-600 dark:text-slate-400">
-                Run AutoPR Engine in a containerized environment:
+                Run CodeFlow Engine in a containerized environment:
               </p>
               <div className="space-y-2 rounded-lg bg-slate-800 p-4 font-mono text-sm text-slate-50 dark:bg-slate-900">
                 <div>
                   <span className="text-slate-400"># Pull the image</span>
                 </div>
                 <div>
-                  <code>docker pull ghcr.io/justaghost/autopr-engine:latest</code>
+                  <code>docker pull ghcr.io/justaghost/codeflow-engine:latest</code>
                 </div>
                 <div className="mt-4">
                   <span className="text-slate-400"># Run the container</span>
                 </div>
                 <div>
-                  <code>docker run -p 8000:8000 ghcr.io/justaghost/autopr-engine:latest</code>
+                  <code>docker run -p 8000:8000 ghcr.io/justaghost/codeflow-engine:latest</code>
                 </div>
               </div>
             </div>
@@ -62,13 +62,13 @@ export default function Installation() {
               </p>
               <div className="space-y-2 rounded-lg bg-slate-800 p-4 font-mono text-sm text-slate-50 dark:bg-slate-900">
                 <div>
-                  <code>pip install autopr-engine</code>
+                  <code>pip install codeflow-engine</code>
                 </div>
                 <div className="mt-4">
                   <span className="text-slate-400"># Or using Poetry</span>
                 </div>
                 <div>
-                  <code>poetry add autopr-engine</code>
+                  <code>poetry add codeflow-engine</code>
                 </div>
               </div>
             </div>
@@ -79,14 +79,14 @@ export default function Installation() {
                 GitHub App Setup
               </h2>
               <p className="mb-4 text-slate-600 dark:text-slate-400">
-                Configure AutoPR Engine as a GitHub App:
+                Configure CodeFlow Engine as a GitHub App:
               </p>
               <ol className="list-decimal space-y-2 pl-6 text-slate-600 dark:text-slate-400">
                 <li>Create a new GitHub App in your organization settings</li>
-                <li>Set the webhook URL to your AutoPR Engine instance</li>
+                <li>Set the webhook URL to your CodeFlow Engine instance</li>
                 <li>Configure the required permissions (read/write access to PRs and issues)</li>
                 <li>Install the app on your repositories</li>
-                <li>Configure environment variables in your AutoPR Engine instance</li>
+                <li>Configure environment variables in your CodeFlow Engine instance</li>
               </ol>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function Installation() {
             <p className="text-blue-800 dark:text-blue-200">
               Check out our{" "}
               <a
-                href="https://github.com/JustAGhosT/autopr-engine/blob/main/README.md"
+                href="https://github.com/JustAGhosT/codeflow-engine/blob/main/README.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:no-underline"
@@ -113,7 +113,7 @@ export default function Installation() {
 
       <footer className="border-t border-slate-200 bg-white/30 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/30">
         <div className="mx-auto max-w-7xl px-6 py-8 text-center text-slate-600 dark:text-slate-400">
-          <p>&copy; {new Date().getFullYear()} AutoPR Engine. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} CodeFlow Engine. All rights reserved.</p>
         </div>
       </footer>
     </div>

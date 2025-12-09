@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+﻿import Header from "../components/Header";
 
 export default function Download() {
   return (
@@ -8,7 +8,7 @@ export default function Download() {
       <main className="flex-1">
         <section className="mx-auto max-w-4xl px-6 py-24">
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
-            Download AutoPR Engine
+            Download CodeFlow Engine
           </h1>
           <p className="mb-12 text-xl text-slate-600 dark:text-slate-400">
             Choose your preferred download method and platform.
@@ -24,12 +24,12 @@ export default function Download() {
                 Download the latest stable release from GitHub:
               </p>
               <a
-                href="https://github.com/JustAGhosT/autopr-engine/releases/latest"
+                href="https://github.com/JustAGhosT/codeflow-engine/releases/latest"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg bg-slate-800 px-6 py-3 font-semibold text-white transition-colors hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200"
               >
-                View Releases →
+                View Releases â†’
               </a>
             </div>
 
@@ -42,15 +42,15 @@ export default function Download() {
                 Install from Python Package Index:
               </p>
               <div className="rounded-lg bg-slate-800 p-4 font-mono text-sm text-slate-50 dark:bg-slate-900">
-                <code>pip install autopr-engine</code>
+                <code>pip install codeflow-engine</code>
               </div>
               <a
-                href="https://pypi.org/project/autopr-engine/"
+                href="https://pypi.org/project/codeflow-engine/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-block text-blue-600 hover:underline dark:text-blue-400"
               >
-                View on PyPI →
+                View on PyPI â†’
               </a>
             </div>
 
@@ -63,15 +63,15 @@ export default function Download() {
                 Pull from GitHub Container Registry:
               </p>
               <div className="rounded-lg bg-slate-800 p-4 font-mono text-sm text-slate-50 dark:bg-slate-900">
-                <code>docker pull ghcr.io/justaghost/autopr-engine:latest</code>
+                <code>docker pull ghcr.io/justaghost/codeflow-engine:latest</code>
               </div>
               <a
-                href="https://github.com/JustAGhosT/autopr-engine/pkgs/container/autopr-engine"
+                href="https://github.com/JustAGhosT/codeflow-engine/pkgs/container/codeflow-engine"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-block text-blue-600 hover:underline dark:text-blue-400"
               >
-                View Container Registry →
+                View Container Registry â†’
               </a>
             </div>
 
@@ -84,7 +84,7 @@ export default function Download() {
                 Clone the repository to build from source:
               </p>
               <div className="rounded-lg bg-slate-800 p-4 font-mono text-sm text-slate-50 dark:bg-slate-900">
-                <code>git clone https://github.com/JustAGhosT/autopr-engine.git</code>
+                <code>git clone https://github.com/JustAGhosT/codeflow-engine.git</code>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function Download() {
 
       <footer className="border-t border-slate-200 bg-white/30 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/30">
         <div className="mx-auto max-w-7xl px-6 py-8 text-center text-slate-600 dark:text-slate-400">
-          <p>&copy; {new Date().getFullYear()} AutoPR Engine. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} CodeFlow Engine. All rights reserved.</p>
         </div>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+﻿import Header from "../components/Header";
 import { APP_URL, API_URL } from "../config/constants";
 
 export default function Integration() {
@@ -9,10 +9,10 @@ export default function Integration() {
       <main className="flex-1">
         <section className="mx-auto max-w-4xl px-6 py-24">
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
-            Integrate with AutoPR
+            Integrate with CodeFlow
           </h1>
           <p className="mb-12 text-xl text-slate-600 dark:text-slate-400">
-            Connect your GitHub repositories to our deployed AutoPR instance.
+            Connect your GitHub repositories to our deployed CodeFlow instance.
           </p>
 
           <div className="space-y-8">
@@ -27,7 +27,7 @@ export default function Integration() {
                 </h2>
               </div>
               <p className="mb-4 text-slate-600 dark:text-slate-400">
-                Navigate to our hosted AutoPR instance and sign in with your
+                Navigate to our hosted CodeFlow instance and sign in with your
                 GitHub account:
               </p>
               <a
@@ -36,7 +36,7 @@ export default function Integration() {
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 font-semibold text-white transition-all hover:from-blue-700 hover:to-purple-700 hover:shadow-lg"
               >
-                Open AutoPR Engine →
+                Open CodeFlow Engine â†’
               </a>
             </div>
 
@@ -51,7 +51,7 @@ export default function Integration() {
                 </h2>
               </div>
               <p className="mb-4 text-slate-600 dark:text-slate-400">
-                When prompted, authorize AutoPR to access your GitHub
+                When prompted, authorize CodeFlow to access your GitHub
                 repositories. The following permissions are required:
               </p>
               <ul className="list-disc space-y-2 pl-6 text-slate-600 dark:text-slate-400">
@@ -78,19 +78,19 @@ export default function Integration() {
                 </h2>
               </div>
               <p className="mb-4 text-slate-600 dark:text-slate-400">
-                Install the AutoPR GitHub App on your organization or personal
+                Install the CodeFlow GitHub App on your organization or personal
                 repositories:
               </p>
               <ol className="list-decimal space-y-2 pl-6 text-slate-600 dark:text-slate-400">
                 <li>
                   Go to{" "}
                   <a
-                    href="https://github.com/apps/autopr-engine"
+                    href="https://github.com/apps/codeflow-engine"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline dark:text-blue-400"
                   >
-                    github.com/apps/autopr-engine
+                    github.com/apps/codeflow-engine
                   </a>
                 </li>
                 <li>
@@ -98,7 +98,7 @@ export default function Integration() {
                   <strong>Configure</strong>
                 </li>
                 <li>
-                  Select the repositories you want AutoPR to monitor
+                  Select the repositories you want CodeFlow to monitor
                 </li>
                 <li>Confirm the installation</li>
               </ol>
@@ -115,7 +115,7 @@ export default function Integration() {
                 </h2>
               </div>
               <p className="mb-4 text-slate-600 dark:text-slate-400">
-                In the AutoPR dashboard, configure settings for each connected
+                In the CodeFlow dashboard, configure settings for each connected
                 repository:
               </p>
               <ul className="list-disc space-y-2 pl-6 text-slate-600 dark:text-slate-400">
@@ -149,11 +149,11 @@ export default function Integration() {
                 </h2>
               </div>
               <p className="mb-4 text-slate-600 dark:text-slate-400">
-                For advanced customization, add an <code>.autopr.yml</code>{" "}
+                For advanced customization, add an <code>.codeflow.yml</code>{" "}
                 configuration file to your repository:
               </p>
               <div className="rounded-lg bg-slate-800 p-4 font-mono text-sm text-slate-50 dark:bg-slate-900">
-                <pre className="overflow-x-auto">{`# .autopr.yml
+                <pre className="overflow-x-auto">{`# .codeflow.yml
 version: 1
 analysis:
   enabled: true
@@ -199,10 +199,10 @@ quality_gates:
                 <li>Create a new branch and make some changes</li>
                 <li>Open a pull request to your main branch</li>
                 <li>
-                  AutoPR will automatically analyze the PR and post comments
+                  CodeFlow will automatically analyze the PR and post comments
                 </li>
                 <li>
-                  Check the AutoPR dashboard for detailed analysis results
+                  Check the CodeFlow dashboard for detailed analysis results
                 </li>
               </ol>
             </div>
@@ -214,7 +214,7 @@ quality_gates:
               API Integration
             </h2>
             <p className="mb-4 text-slate-700 dark:text-slate-300">
-              For programmatic access, use the AutoPR API to integrate with your
+              For programmatic access, use the CodeFlow API to integrate with your
               existing workflows and tools:
             </p>
             <div className="rounded-lg bg-slate-800 p-4 font-mono text-sm text-slate-50 dark:bg-slate-900">
@@ -235,7 +235,7 @@ curl -X POST ${API_URL}/v1/analyze \\
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline dark:text-blue-400"
               >
-                AutoPR Dashboard Settings
+                CodeFlow Dashboard Settings
               </a>
               .
             </p>
@@ -247,7 +247,7 @@ curl -X POST ${API_URL}/v1/analyze \\
               Webhook Events
             </h2>
             <p className="mb-4 text-slate-600 dark:text-slate-400">
-              AutoPR can send webhook notifications to your systems when
+              CodeFlow can send webhook notifications to your systems when
               analysis is complete:
             </p>
             <div className="overflow-x-auto">
@@ -272,7 +272,7 @@ curl -X POST ${API_URL}/v1/analyze \\
                   <tr className="border-b border-slate-100 dark:border-slate-700">
                     <td className="px-4 py-2 font-mono">issues.created</td>
                     <td className="px-4 py-2">
-                      Fired when AutoPR creates new issues
+                      Fired when CodeFlow creates new issues
                     </td>
                   </tr>
                   <tr className="border-b border-slate-100 dark:border-slate-700">
@@ -300,7 +300,7 @@ curl -X POST ${API_URL}/v1/analyze \\
             <p className="text-blue-800 dark:text-blue-200">
               Check out our{" "}
               <a
-                href="https://github.com/JustAGhosT/autopr-engine/blob/main/docs/GITHUB_APP_QUICKSTART.md"
+                href="https://github.com/JustAGhosT/codeflow-engine/blob/main/docs/GITHUB_APP_QUICKSTART.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:no-underline"
@@ -309,7 +309,7 @@ curl -X POST ${API_URL}/v1/analyze \\
               </a>{" "}
               or reach out on{" "}
               <a
-                href="https://github.com/JustAGhosT/autopr-engine/discussions"
+                href="https://github.com/JustAGhosT/codeflow-engine/discussions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:no-underline"
@@ -325,7 +325,7 @@ curl -X POST ${API_URL}/v1/analyze \\
       <footer className="border-t border-slate-200 bg-white/30 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/30">
         <div className="mx-auto max-w-7xl px-6 py-8 text-center text-slate-600 dark:text-slate-400">
           <p>
-            &copy; {new Date().getFullYear()} AutoPR Engine. All rights
+            &copy; {new Date().getFullYear()} CodeFlow Engine. All rights
             reserved.
           </p>
         </div>

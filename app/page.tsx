@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Header from "./components/Header";
 import { APP_URL } from "./config/constants";
 
@@ -12,7 +12,7 @@ export default function Home() {
       <main className="flex-1">
         <section className="mx-auto max-w-7xl px-6 py-24 text-center">
           <div className="mb-8 inline-block rounded-full bg-gradient-to-r from-amber-50 to-orange-50 px-6 py-2 text-sm font-semibold text-amber-900 dark:from-amber-950/80 dark:to-orange-950/80 dark:text-amber-100">
-            🚧 Alpha Preview - Try our early access version →
+            ðŸš§ Alpha Preview - Try our early access version â†’
           </div>
           <h1 className="mb-6 text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-6xl">
             AI-Powered GitHub PR Automation
@@ -53,7 +53,7 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-3">
             <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
               <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                🤖 AI-Powered Analysis
+                ðŸ¤– AI-Powered Analysis
               </h3>
               <p className="text-slate-600 dark:text-slate-400">
                 Intelligent code analysis using GPT-4, Claude, and other leading AI models 
@@ -62,7 +62,7 @@ export default function Home() {
             </div>
             <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
               <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                🔄 Automated Workflows
+                ðŸ”„ Automated Workflows
               </h3>
               <p className="text-slate-600 dark:text-slate-400">
                 Create custom workflows to automate issue creation, code reviews, 
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
             <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
               <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                🚀 Multi-Agent Collaboration
+                ðŸš€ Multi-Agent Collaboration
               </h3>
               <p className="text-slate-600 dark:text-slate-400">
                 Leverage multiple AI agents working together to handle complex 
@@ -85,13 +85,13 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-6 py-12">
           <div className="rounded-lg border-2 border-amber-500 bg-gradient-to-r from-amber-50/90 to-orange-50/90 p-8 text-center backdrop-blur-sm dark:from-amber-950/80 dark:to-orange-950/80">
             <div className="mb-2 text-sm font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-300">
-              🚧 Alpha Preview
+              ðŸš§ Alpha Preview
             </div>
             <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-slate-50">
-              Try AutoPR Engine Alpha - Help Shape the Future!
+              Try CodeFlow Engine Alpha - Help Shape the Future!
             </h2>
             <p className="mb-6 text-lg text-slate-700 dark:text-slate-300">
-              AutoPR Engine is in active development. Try our alpha preview to experience the power 
+              CodeFlow Engine is in active development. Try our alpha preview to experience the power 
               of AI-powered PR automation and help us improve with your feedback.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -101,10 +101,10 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-3 text-lg font-semibold text-white transition-all hover:from-blue-700 hover:to-purple-700 hover:shadow-lg"
               >
-                Access Alpha Preview →
+                Access Alpha Preview â†’
               </a>
               <a
-                href="https://github.com/JustAGhosT/autopr-engine/discussions"
+                href="https://github.com/JustAGhosT/codeflow-engine/discussions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg border-2 border-amber-500 bg-white/50 px-8 py-3 text-lg font-semibold text-amber-700 backdrop-blur-sm transition-colors hover:bg-amber-100 dark:bg-slate-800/50 dark:text-amber-300 dark:hover:bg-amber-900/50"
@@ -122,7 +122,7 @@ export default function Home() {
               Ready to Transform Your Workflow?
             </h2>
             <p className="mb-8 text-xl text-slate-600 dark:text-slate-300">
-              Get started with AutoPR Engine alpha today and experience the future of PR automation.
+              Get started with CodeFlow Engine alpha today and experience the future of PR automation.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
@@ -147,7 +147,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white/30 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/30">
         <div className="mx-auto max-w-7xl px-6 py-8 text-center text-slate-600 dark:text-slate-400">
-          <p>&copy; {new Date().getFullYear()} AutoPR Engine. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} CodeFlow Engine. All rights reserved.</p>
         </div>
       </footer>
     </div>

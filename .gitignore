@@ -40,3 +40,7 @@ next-env.d.ts
 .idea/
 *.swp
 *.swo
+
+# Credentials and sensitive files
+.credentials-*.json
+deployment-output.json

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from "next/link";
 import AlphaBadge from "./AlphaBadge";
@@ -27,7 +27,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps) {
           className="flex items-center text-2xl font-bold text-slate-900 dark:text-slate-50"
           aria-current={isCurrentPage('home') ? 'page' : undefined}
         >
-          AutoPR Engine
+          CodeFlow Engine
           <AlphaBadge />
         </Link>
         <div className="flex items-center gap-6">
@@ -53,11 +53,11 @@ export default function Header({ currentPage = 'home' }: HeaderProps) {
             Download
           </Link>
           <a
-            href="https://github.com/JustAGhosT/autopr-engine"
+            href="https://github.com/JustAGhosT/codeflow-engine"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-50"
-            aria-label="View AutoPR Engine on GitHub (opens in new tab)"
+            aria-label="View CodeFlow Engine on GitHub (opens in new tab)"
           >
             GitHub
           </a>
