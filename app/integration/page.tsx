@@ -1,4 +1,5 @@
-﻿import Header from "../components/Header";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { APP_URL, API_URL } from "../config/constants";
 
 export default function Integration() {
@@ -36,7 +37,7 @@ export default function Integration() {
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 font-semibold text-white transition-all hover:from-blue-700 hover:to-purple-700 hover:shadow-lg"
               >
-                Open CodeFlow Engine â†’
+                Open CodeFlow Engine →
               </a>
             </div>
 
@@ -322,14 +323,7 @@ curl -X POST ${API_URL}/v1/analyze \\
         </section>
       </main>
 
-      <footer className="border-t border-slate-200 bg-white/30 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/30">
-        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-slate-600 dark:text-slate-400">
-          <p>
-            &copy; {new Date().getFullYear()} CodeFlow Engine. All rights
-            reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

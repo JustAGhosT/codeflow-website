@@ -1,4 +1,5 @@
-﻿import Header from "../components/Header";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Download() {
   return (
@@ -29,7 +30,7 @@ export default function Download() {
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg bg-slate-800 px-6 py-3 font-semibold text-white transition-colors hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200"
               >
-                View Releases â†’
+                View Releases →
               </a>
             </div>
 
@@ -50,7 +51,7 @@ export default function Download() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-block text-blue-600 hover:underline dark:text-blue-400"
               >
-                View on PyPI â†’
+                View on PyPI →
               </a>
             </div>
 
@@ -71,7 +72,7 @@ export default function Download() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-block text-blue-600 hover:underline dark:text-blue-400"
               >
-                View Container Registry â†’
+                View Container Registry →
               </a>
             </div>
 
@@ -103,11 +104,7 @@ export default function Download() {
         </section>
       </main>
 
-      <footer className="border-t border-slate-200 bg-white/30 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/30">
-        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-slate-600 dark:text-slate-400">
-          <p>&copy; {new Date().getFullYear()} CodeFlow Engine. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

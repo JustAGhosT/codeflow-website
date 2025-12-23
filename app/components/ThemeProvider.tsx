@@ -48,9 +48,15 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   // Initialize theme from localStorage on mount
   useIsomorphicLayoutEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (isValidTheme(savedTheme)) {
-      setThemeState(savedTheme);
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      if (isValidTheme(savedTheme)) {
+        setThemeState(savedTheme);
+      }
+    } catch (error) {
+      // localStorage may be disabled (private browsing, storage quota exceeded, etc.)
+      // Fall back to default 'system' theme
+      console.error('Failed to read theme from localStorage:', error);
     }
     setMounted(true);
   }, []);
@@ -81,7 +87,13 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem('theme', newTheme);
+    try {
+      localStorage.setItem('theme', newTheme);
+    } catch (error) {
+      // localStorage may be disabled or quota exceeded
+      // Theme will still work in memory for this session
+      console.error('Failed to save theme to localStorage:', error);
+    }
   };
 
   // Prevent hydration mismatch by not rendering until mounted
