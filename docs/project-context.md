@@ -92,8 +92,8 @@ Users download CodeFlow through their preferred distribution channel.
 | Unit tests | None found | No *.test.* or *.spec.* files |
 | Integration tests | None found | No test directories |
 | E2E tests | None found | No Playwright/Cypress config |
-| CI testing | Present but weak | `npm test` |
-| Linting | Present but non-blocking | `npm run lint` |
+| CI testing | Present but non-blocking | CI workflow exists but uses `\|\| true` (tests always pass) |
+| Linting | Present but non-blocking | `npm run lint` via `eslint .` |
 
 ---
 
