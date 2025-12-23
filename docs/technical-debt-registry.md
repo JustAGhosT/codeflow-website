@@ -6,12 +6,14 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 
 ## Registry Summary
 
-| Priority | Count | Total Effort |
-|----------|-------|--------------|
-| Critical | 2 | M + M |
-| High | 5 | S + M + S + L + S |
-| Medium | 6 | S + M + S + M + M + M |
-| Low | 4 | S + S + S + S |
+| Priority | Count | Resolved | Remaining | Total Effort (Remaining) |
+|----------|-------|----------|-----------|--------------------------|
+| Critical | 2 | 2 | 0 | - |
+| High | 5 | 3 | 2 | M + L |
+| Medium | 6 | 3 | 3 | M + M + M |
+| Low | 4 | 0 | 4 | S + S + S + S |
+
+**Total Remaining**: 9 items (was 17)
 
 ---
 
@@ -291,23 +293,43 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 
 | ID | Status | Resolved Date | Resolution Notes |
 |----|--------|---------------|------------------|
-| DEBT-01 | Open | - | - |
-| DEBT-02 | Open | - | Blocked by DEBT-01 |
-| DEBT-03 | Open | - | - |
-| DEBT-04 | Open | - | - |
-| DEBT-05 | Open | - | - |
-| DEBT-06 | Open | - | - |
-| DEBT-07 | Open | - | - |
-| DEBT-08 | Open | - | - |
-| DEBT-09 | Open | - | - |
-| DEBT-10 | Open | - | - |
+| DEBT-01 | ✅ Resolved | 2025-12-23 | Vitest configured with 19 passing tests, coverage reporting |
+| DEBT-02 | ✅ Resolved | 2025-12-23 | Removed `|| true` from CI workflow; tests now blocking |
+| DEBT-03 | ✅ Resolved | 2025-12-23 | UTF-8 encoding fixed; .editorconfig added |
+| DEBT-04 | Open | - | Requires external repo access |
+| DEBT-05 | ✅ Resolved | 2025-12-23 | Created app/error.tsx and app/global-error.tsx |
+| DEBT-06 | Open | - | Large effort; CSP nonce strategy needed |
+| DEBT-07 | ✅ Resolved | 2025-12-23 | localStorage wrapped in try-catch in ThemeProvider |
+| DEBT-08 | ✅ Resolved | 2025-12-23 | Created debounce utility; applied to resize handler |
+| DEBT-09 | ✅ Resolved | 2025-12-23 | Created Footer.tsx; replaced in all 4 pages |
+| DEBT-10 | ✅ Resolved | 2025-12-23 | Using useTheme() context instead of DOM inspection |
 | DEBT-11 | Open | - | - |
 | DEBT-12 | Open | - | - |
 | DEBT-13 | Open | - | - |
 | DEBT-14 | Open | - | - |
 | DEBT-15 | Open | - | - |
 | DEBT-16 | Open | - | - |
-| DEBT-17 | Open | - | - |
+| DEBT-17 | Open | - | README enhancement pending |
+
+---
+
+## Cycle History
+
+### Cycle 1 (2025-12-23)
+
+**Items Addressed**: DEBT-01, DEBT-02, DEBT-03, DEBT-05, DEBT-07, DEBT-08, DEBT-09, DEBT-10
+
+**Summary**:
+- Established test infrastructure with Vitest (19 tests passing)
+- Made CI quality gates blocking (tests and lint)
+- Fixed UTF-8 encoding issues and added .editorconfig
+- Added error boundaries (error.tsx, global-error.tsx)
+- Added localStorage error handling in ThemeProvider
+- Created debounce utility and applied to AnimatedBackground
+- Extracted Footer component from 4 pages
+- Refactored AnimatedBackground to use ThemeContext
+
+**Remaining**: 9 items (DEBT-04, DEBT-06, DEBT-11-17)
 
 ---
 
