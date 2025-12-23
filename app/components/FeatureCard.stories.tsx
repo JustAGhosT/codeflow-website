@@ -110,6 +110,11 @@ export const LinkedExternal: Story = {
 
 // Feature grid showcase
 export const FeatureGrid: Story = {
+  args: {
+    icon: '🤖',
+    title: 'Feature Grid',
+    description: 'This story shows multiple feature cards in a grid.',
+  },
   render: () => (
     <div className="grid max-w-3xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       <FeatureCard

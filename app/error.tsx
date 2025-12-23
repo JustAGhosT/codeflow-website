@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { captureError } from '@/lib/monitoring';
+import { captureError } from '@/app/lib/monitoring';
 
 interface ErrorProps {
   error: Error & { digest?: string };

@@ -127,6 +127,11 @@ export const Disabled: Story = {
 
 // All variants showcase
 export const AllVariants: Story = {
+  args: {
+    variant: 'primary',
+    size: 'md',
+    children: 'All Variants',
+  },
   render: () => (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-4">
