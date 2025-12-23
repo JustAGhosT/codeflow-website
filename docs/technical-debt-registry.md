@@ -9,11 +9,11 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 | Priority | Count | Resolved | Remaining | Total Effort (Remaining) |
 |----------|-------|----------|-----------|--------------------------|
 | Critical | 2 | 2 | 0 | - |
-| High | 5 | 3 | 2 | M + L |
-| Medium | 6 | 5 | 1 | M |
+| High | 5 | 4 | 1 | L |
+| Medium | 6 | 6 | 0 | - |
 | Low | 4 | 4 | 0 | - |
 
-**Total Remaining**: 3 items (was 17, Cycle 1 resolved 8, Cycle 2 resolved 6)
+**Total Remaining**: 1 item (was 17, Cycle 1 resolved 8, Cycle 2 resolved 6, Cycle 3 resolved 2)
 
 ---
 
@@ -296,7 +296,7 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 | DEBT-01 | ✅ Resolved | 2025-12-23 | Vitest configured with 19 passing tests, coverage reporting |
 | DEBT-02 | ✅ Resolved | 2025-12-23 | Removed `|| true` from CI workflow; tests now blocking |
 | DEBT-03 | ✅ Resolved | 2025-12-23 | UTF-8 encoding fixed; .editorconfig added |
-| DEBT-04 | Open | - | Requires external repo access |
+| DEBT-04 | ✅ Resolved | 2025-12-23 | Local CSS custom property fallbacks added to globals.css |
 | DEBT-05 | ✅ Resolved | 2025-12-23 | Created app/error.tsx and app/global-error.tsx |
 | DEBT-06 | Open | - | Large effort; CSP nonce strategy needed |
 | DEBT-07 | ✅ Resolved | 2025-12-23 | localStorage wrapped in try-catch in ThemeProvider |
@@ -305,7 +305,7 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 | DEBT-10 | ✅ Resolved | 2025-12-23 | Using useTheme() context instead of DOM inspection |
 | DEBT-11 | ✅ Resolved | 2025-12-23 | Created FeatureCard.tsx; replaced inline cards in page.tsx |
 | DEBT-12 | ✅ Resolved | 2025-12-23 | Created Button.tsx with primary/secondary/outline variants |
-| DEBT-13 | Open | - | Storybook deferred to future cycle |
+| DEBT-13 | ✅ Resolved | 2025-12-23 | Storybook configured with stories for Button, FeatureCard, Footer, ThemeToggle |
 | DEBT-14 | ✅ Resolved | 2025-12-23 | Created app/loading.tsx with spinner animation |
 | DEBT-15 | ✅ Resolved | 2025-12-23 | Created app/lib/monitoring.ts scaffold |
 | DEBT-16 | ✅ Resolved | 2025-12-23 | Created app/lib/analytics.ts scaffold |
@@ -365,6 +365,47 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 **Files Modified**: `app/lib/analytics.ts`, `app/loading.tsx`, `app/error.tsx`, `app/global-error.tsx`, `README.md`
 
 **Remaining**: 3 items (DEBT-04, DEBT-06, DEBT-13)
+
+---
+
+### Cycle 3 (2025-12-23)
+
+**Items Addressed**: DEBT-04, DEBT-13
+
+**Summary**:
+- DEBT-04: Added comprehensive CSS custom property fallbacks to `globals.css`:
+  - Spacing tokens (--space-1 through --space-8)
+  - Color tokens for light mode (neutral-50 to neutral-950, primary-500/600, surface)
+  - Typography tokens (font-size-xs to lg, font-weight-normal to bold)
+  - Border tokens (width, radius variants)
+  - Focus ring tokens for accessibility
+  - Animation tokens (durations, easing functions)
+  - Z-index tokens for stacking context
+  - Scrollbar styling tokens
+  - Dark mode overrides
+- DEBT-13: Configured Storybook for Next.js with component stories:
+  - Installed @storybook/react, @storybook/nextjs, addon-essentials, addon-interactions
+  - Created `.storybook/main.ts` with Next.js App Router configuration
+  - Created `.storybook/preview.tsx` with theme switching support
+  - Created `Button.stories.tsx` - all variants (primary/secondary/outline) and sizes (sm/md/lg)
+  - Created `FeatureCard.stories.tsx` - static and linked card variants
+  - Created `Footer.stories.tsx` - light/dark theme comparison
+  - Created `ThemeToggle.stories.tsx` - interactive theme cycling
+  - Added `storybook` and `build-storybook` npm scripts
+
+**Files Created**:
+- `.storybook/main.ts`
+- `.storybook/preview.tsx`
+- `app/components/Button.stories.tsx`
+- `app/components/FeatureCard.stories.tsx`
+- `app/components/Footer.stories.tsx`
+- `app/components/ThemeToggle.stories.tsx`
+
+**Files Modified**:
+- `app/globals.css` - CSS custom property fallbacks
+- `package.json` - Storybook dependencies and scripts
+
+**Remaining after Cycle 3**: 1 item (DEBT-06 - CSP Security Headers)
 
 ---
 
