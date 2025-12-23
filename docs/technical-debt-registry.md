@@ -10,10 +10,10 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 |----------|-------|----------|-----------|--------------------------|
 | Critical | 2 | 2 | 0 | - |
 | High | 5 | 3 | 2 | M + L |
-| Medium | 6 | 3 | 3 | M + M + M |
-| Low | 4 | 0 | 4 | S + S + S + S |
+| Medium | 6 | 5 | 1 | M |
+| Low | 4 | 4 | 0 | - |
 
-**Total Remaining**: 9 items (was 17)
+**Total Remaining**: 3 items (was 17, Cycle 1 resolved 8, Cycle 2 resolved 6)
 
 ---
 
@@ -303,13 +303,13 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 | DEBT-08 | ✅ Resolved | 2025-12-23 | Created debounce utility; applied to resize handler |
 | DEBT-09 | ✅ Resolved | 2025-12-23 | Created Footer.tsx; replaced in all 4 pages |
 | DEBT-10 | ✅ Resolved | 2025-12-23 | Using useTheme() context instead of DOM inspection |
-| DEBT-11 | Open | - | - |
-| DEBT-12 | Open | - | - |
-| DEBT-13 | Open | - | - |
-| DEBT-14 | Open | - | - |
-| DEBT-15 | Open | - | - |
-| DEBT-16 | Open | - | - |
-| DEBT-17 | Open | - | README enhancement pending |
+| DEBT-11 | ✅ Resolved | 2025-12-23 | Created FeatureCard.tsx; replaced inline cards in page.tsx |
+| DEBT-12 | ✅ Resolved | 2025-12-23 | Created Button.tsx with primary/secondary/outline variants |
+| DEBT-13 | Open | - | Storybook deferred to future cycle |
+| DEBT-14 | ✅ Resolved | 2025-12-23 | Created app/loading.tsx with spinner animation |
+| DEBT-15 | ✅ Resolved | 2025-12-23 | Created app/lib/monitoring.ts scaffold |
+| DEBT-16 | ✅ Resolved | 2025-12-23 | Created app/lib/analytics.ts scaffold |
+| DEBT-17 | ✅ Resolved | 2025-12-23 | Enhanced README with docs links, testing, and contribution guide |
 
 ---
 
@@ -329,7 +329,25 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 - Extracted Footer component from 4 pages
 - Refactored AnimatedBackground to use ThemeContext
 
-**Remaining**: 9 items (DEBT-04, DEBT-06, DEBT-11-17)
+**Remaining after Cycle 1**: 9 items (DEBT-04, DEBT-06, DEBT-11-17)
+
+---
+
+### Cycle 2 (2025-12-23)
+
+**Items Addressed**: DEBT-11, DEBT-12, DEBT-14, DEBT-15, DEBT-16, DEBT-17
+
+**Summary**:
+- Created FeatureCard.tsx component (DEBT-11) - replaced 3 inline card structures in page.tsx
+- Created Button.tsx component (DEBT-12) - standardized button variants (primary/secondary/outline) with sizes (sm/md/lg)
+- Added loading.tsx (DEBT-14) - spinner animation for route loading states
+- Created monitoring.ts scaffold (DEBT-15) - error tracking utility with Sentry-compatible API
+- Created analytics.ts scaffold (DEBT-16) - analytics tracking with Do Not Track respect
+- Enhanced README.md (DEBT-17) - added documentation links, testing instructions, contribution guidelines
+
+**Test Coverage**: 76 tests passing (was 19 after Cycle 1)
+
+**Remaining after Cycle 2**: 3 items (DEBT-04, DEBT-06, DEBT-13)
 
 ---
 

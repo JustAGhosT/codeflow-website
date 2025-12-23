@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { FeatureCard } from "./components/FeatureCard";
 import { APP_URL } from "./config/constants";
 
 export default function Home() {
@@ -52,33 +53,21 @@ export default function Home() {
             Key Features
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
-              <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                🤖 AI-Powered Analysis
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Intelligent code analysis using GPT-4, Claude, and other leading AI models
-                to provide comprehensive PR reviews.
-              </p>
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
-              <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                🔄 Automated Workflows
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Create custom workflows to automate issue creation, code reviews,
-                and deployment processes.
-              </p>
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
-              <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                🚀 Multi-Agent Collaboration
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Leverage multiple AI agents working together to handle complex
-                development tasks efficiently.
-              </p>
-            </div>
+            <FeatureCard
+              icon="🤖"
+              title="AI-Powered Analysis"
+              description="Intelligent code analysis using GPT-4, Claude, and other leading AI models to provide comprehensive PR reviews."
+            />
+            <FeatureCard
+              icon="🔄"
+              title="Automated Workflows"
+              description="Create custom workflows to automate issue creation, code reviews, and deployment processes."
+            />
+            <FeatureCard
+              icon="🚀"
+              title="Multi-Agent Collaboration"
+              description="Leverage multiple AI agents working together to handle complex development tasks efficiently."
+            />
           </div>
         </section>
 
