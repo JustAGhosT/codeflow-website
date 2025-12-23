@@ -32,7 +32,7 @@ The CodeFlow Website is a marketing site with no dynamic data requirements. Stat
 
 ### Directory Layout
 
-```
+```text
 codeflow-website/
 ├── app/                      # Next.js App Router
 │   ├── components/           # Shared React components
@@ -79,7 +79,7 @@ codeflow-website/
 
 ### Component Hierarchy
 
-```
+```text
 RootLayout (app/layout.tsx)
 ├── ThemeProvider
 │   ├── Skip Link (accessibility)
@@ -122,7 +122,7 @@ RootLayout (app/layout.tsx)
 
 ### Build-Time Data Flow
 
-```
+```text
 Source Files → Next.js Build → Static HTML/CSS/JS → CDN → Browser
 ```
 
@@ -135,7 +135,7 @@ Source Files → Next.js Build → Static HTML/CSS/JS → CDN → Browser
 
 ### Runtime Data Flow
 
-```
+```text
 Browser → Load Static HTML → Hydrate React → Client-side Interactivity
 ```
 
@@ -160,7 +160,7 @@ Browser → Load Static HTML → Hydrate React → Client-side Interactivity
 
 ### Design Token Architecture
 
-```
+```text
 External Design System (codeflow-desktop)
          ↓
     [Not mirrored]
@@ -180,7 +180,7 @@ Component Styles
 
 ### CI/CD Pipeline
 
-```
+```text
 GitHub Repository
       │
       ▼
@@ -261,7 +261,7 @@ GitHub Repository
 
 The CodeFlow Website is part of a larger multi-repository ecosystem:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    CodeFlow Ecosystem                       │
 ├─────────────────────────────────────────────────────────────┤
