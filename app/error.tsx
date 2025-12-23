@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { captureError } from '@/lib/monitoring';
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -9,8 +10,8 @@ interface ErrorProps {
 
 export default function Error({ error, reset }: ErrorProps) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    console.error('Application error:', error);
+    // Report error to monitoring service
+    captureError(error, { component: 'ErrorBoundary' }, 'error');
   }, [error]);
 
   return (

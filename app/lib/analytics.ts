@@ -63,7 +63,7 @@ function hasDoNotTrack(): boolean {
  * ```
  */
 export function trackPageView(path?: string, title?: string): void {
-  if (hasDoNotTrack()) return;
+  if (hasDoNotTrack() || hasOptedOut()) return;
 
   const pagePath = path || (typeof window !== "undefined" ? window.location.pathname : "");
   const pageTitle = title || (typeof document !== "undefined" ? document.title : "");
@@ -94,7 +94,7 @@ export function trackPageView(path?: string, title?: string): void {
  * ```
  */
 export function trackEvent(event: AnalyticsEvent): void {
-  if (hasDoNotTrack()) return;
+  if (hasDoNotTrack() || hasOptedOut()) return;
 
   // TODO: Replace with actual analytics SDK
   // Example Plausible implementation:

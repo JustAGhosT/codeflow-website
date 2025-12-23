@@ -99,7 +99,7 @@ The project uses GitHub Actions for continuous integration:
 
 Use semantic commit messages:
 
-```
+```text
 feat: add new feature
 fix: resolve bug
 docs: update documentation

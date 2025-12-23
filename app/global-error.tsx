@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { captureError } from '@/lib/monitoring';
 
 interface GlobalErrorProps {
   error: Error & { digest?: string };
@@ -9,8 +10,8 @@ interface GlobalErrorProps {
 
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    console.error('Global application error:', error);
+    // Report error to monitoring service
+    captureError(error, { component: 'GlobalErrorBoundary' }, 'fatal');
   }, [error]);
 
   return (

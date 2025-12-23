@@ -351,4 +351,21 @@ This registry tracks all technical debt items identified during the Phase 0-9 au
 
 ---
 
+### Cycle 3 Pre-Work: Code Review Fixes (2025-12-23)
+
+**Items Addressed**: Code review feedback from @coderabbitai[bot]
+
+**Summary**:
+- Fixed analytics.ts opt-out enforcement - added `hasOptedOut()` check to `trackPageView` and `trackEvent`
+- Enhanced loading.tsx accessibility - added `role="status"`, `aria-live="polite"`, `aria-label`, `aria-hidden`
+- Integrated monitoring in error.tsx - using `captureError` from `@/lib/monitoring`
+- Integrated monitoring in global-error.tsx - using `captureError` with `'fatal'` severity
+- Fixed README.md markdown - added `text` language specifier to commit message code block
+
+**Files Modified**: `app/lib/analytics.ts`, `app/loading.tsx`, `app/error.tsx`, `app/global-error.tsx`, `README.md`
+
+**Remaining**: 3 items (DEBT-04, DEBT-06, DEBT-13)
+
+---
+
 Document generated as part of Phase 9 Post-Implementation Review. Last updated: 2025-12-23
