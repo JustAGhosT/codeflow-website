@@ -71,7 +71,7 @@ codeflow-website/
 | `/installation/` | `app/installation/page.tsx` | Installation guide |
 | `/integration/` | `app/integration/page.tsx` | Integration guide |
 
-**Routing Pattern**: File-system based routing via Next.js App Router
+**Routing Pattern**: File-system-based routing via Next.js App Router
 
 ---
 
