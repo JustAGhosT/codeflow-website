@@ -1,6 +1,26 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useSyncExternalStore } from 'react';
+import { debounce } from '../utils/debounce';
+import { useTheme } from './ThemeProvider';
+
+// Hook for subscribing to reduced motion preference
+function useReducedMotion(): boolean {
+  const subscribe = useCallback((callback: () => void) => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    mediaQuery.addEventListener('change', callback);
+    return () => mediaQuery.removeEventListener('change', callback);
+  }, []);
+
+  const getSnapshot = useCallback(() => {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }, []);
+
+  // Server-side default: true (safe, no animation)
+  const getServerSnapshot = useCallback(() => true, []);
+
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+}
 
 /**
  * AnimatedBackground - Particle animation background using design tokens
@@ -68,20 +88,15 @@ export default function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number | null>(null);
   const particlesRef = useRef<Particle[]>([]);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(true); // Default to true (safe)
+  const prefersReducedMotion = useReducedMotion();
+  const { resolvedTheme } = useTheme();
+  // Use ref to track theme in animation loop without causing re-renders
+  const isDarkRef = useRef(resolvedTheme === 'dark');
 
-  // Check initial reduced motion preference on mount
+  // Keep ref in sync with theme context
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setPrefersReducedMotion(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
+    isDarkRef.current = resolvedTheme === 'dark';
+  }, [resolvedTheme]);
 
   const initParticles = useCallback((width: number, height: number) => {
     particlesRef.current = [];
@@ -140,8 +155,12 @@ export default function AnimatedBackground() {
       initParticles(canvas.width, canvas.height);
     };
 
+    // Debounce resize handler to prevent particle re-initialization thrashing
+    const debouncedResize = debounce(resizeCanvas, 250);
+
     const animate = () => {
-      const isDark = document.documentElement.classList.contains('dark');
+      // Use theme from context (via ref) instead of DOM class inspection
+      const isDark = isDarkRef.current;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -155,16 +174,18 @@ export default function AnimatedBackground() {
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
+    // Initial setup (not debounced)
     resizeCanvas();
     animate();
 
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', debouncedResize);
 
     return () => {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
-      window.removeEventListener('resize', resizeCanvas);
+      debouncedResize.cancel();
+      window.removeEventListener('resize', debouncedResize);
     };
   }, [prefersReducedMotion, initParticles, drawConnections]);
 

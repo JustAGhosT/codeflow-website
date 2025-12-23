@@ -49,7 +49,7 @@ jobs:
         run: npm ci
       
       - name: Run tests
-        run: npm test || true
+        run: npm test
 
   lint:
     name: Lint
@@ -67,7 +67,7 @@ jobs:
         run: npm ci
       
       - name: Run ESLint
-        run: npm run lint || true
+        run: npm run lint
 
   deploy:
     name: Deploy to Azure Static Web Apps

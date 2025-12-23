@@ -1,5 +1,7 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { FeatureCard } from "./components/FeatureCard";
 import { APP_URL } from "./config/constants";
 
 export default function Home() {
@@ -12,13 +14,13 @@ export default function Home() {
       <main className="flex-1">
         <section className="mx-auto max-w-7xl px-6 py-24 text-center">
           <div className="mb-8 inline-block rounded-full bg-gradient-to-r from-amber-50 to-orange-50 px-6 py-2 text-sm font-semibold text-amber-900 dark:from-amber-950/80 dark:to-orange-950/80 dark:text-amber-100">
-            ðŸš§ Alpha Preview - Try our early access version â†’
+            🚧 Alpha Preview - Try our early access version →
           </div>
           <h1 className="mb-6 text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-6xl">
             AI-Powered GitHub PR Automation
           </h1>
           <p className="mx-auto mb-12 max-w-2xl text-xl text-slate-600 dark:text-slate-400">
-            Transform your GitHub pull request workflows through intelligent analysis, 
+            Transform your GitHub pull request workflows through intelligent analysis,
             issue creation, and multi-agent collaboration.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -51,33 +53,21 @@ export default function Home() {
             Key Features
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
-              <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                ðŸ¤– AI-Powered Analysis
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Intelligent code analysis using GPT-4, Claude, and other leading AI models 
-                to provide comprehensive PR reviews.
-              </p>
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
-              <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                ðŸ”„ Automated Workflows
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Create custom workflows to automate issue creation, code reviews, 
-                and deployment processes.
-              </p>
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-white/60 p-6 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/60">
-              <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-50">
-                ðŸš€ Multi-Agent Collaboration
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Leverage multiple AI agents working together to handle complex 
-                development tasks efficiently.
-              </p>
-            </div>
+            <FeatureCard
+              icon="🤖"
+              title="AI-Powered Analysis"
+              description="Intelligent code analysis using GPT-4, Claude, and other leading AI models to provide comprehensive PR reviews."
+            />
+            <FeatureCard
+              icon="🔄"
+              title="Automated Workflows"
+              description="Create custom workflows to automate issue creation, code reviews, and deployment processes."
+            />
+            <FeatureCard
+              icon="🚀"
+              title="Multi-Agent Collaboration"
+              description="Leverage multiple AI agents working together to handle complex development tasks efficiently."
+            />
           </div>
         </section>
 
@@ -85,13 +75,13 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-6 py-12">
           <div className="rounded-lg border-2 border-amber-500 bg-gradient-to-r from-amber-50/90 to-orange-50/90 p-8 text-center backdrop-blur-sm dark:from-amber-950/80 dark:to-orange-950/80">
             <div className="mb-2 text-sm font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-300">
-              ðŸš§ Alpha Preview
+              🚧 Alpha Preview
             </div>
             <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-slate-50">
               Try CodeFlow Engine Alpha - Help Shape the Future!
             </h2>
             <p className="mb-6 text-lg text-slate-700 dark:text-slate-300">
-              CodeFlow Engine is in active development. Try our alpha preview to experience the power 
+              CodeFlow Engine is in active development. Try our alpha preview to experience the power
               of AI-powered PR automation and help us improve with your feedback.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -101,7 +91,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-3 text-lg font-semibold text-white transition-all hover:from-blue-700 hover:to-purple-700 hover:shadow-lg"
               >
-                Access Alpha Preview â†’
+                Access Alpha Preview →
               </a>
               <a
                 href="https://github.com/JustAGhosT/codeflow-engine/discussions"
@@ -144,12 +134,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white/30 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/30">
-        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-slate-600 dark:text-slate-400">
-          <p>&copy; {new Date().getFullYear()} CodeFlow Engine. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
